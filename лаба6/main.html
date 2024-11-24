@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HABYDAY PAGE</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <style>
+      #hello_image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-filter: drop-shadow(5px 5px 5px #4682b4);
+        filter: drop-shadow(5px 5px 5px #4682b4);
+
+        -webkit-filter: drop-shadow(5px 5px 5px #4682b4);
+        filter: drop-shadow(5px 5px 5px #4682b4);
+      }
+      body {
+        background-color: rgba(249, 27, 194, 0.5);
+      }
+      .container {
+        text-align: center;
+        color: rgb(74, 255, 80);
+        text-shadow: 0 0 3px #ff0000, 0 0 5px #36ccf6;
+      }
+      .centered {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #demo {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Sofia", sans-serif;
+        font-size: 30px;
+        color: rgb(35, 255, 116);
+      }
+      .rotate {
+        border-radius: 200px;
+        border: 3px solid black;
+        box-shadow: 0 0 7px;
+        animation: rotation 18s infinite linear;
+      }
+
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+        }
+      }
+    </style>
+    <script>
+      var flag = false;
+      function playAudio(url) {
+        if (!flag) {
+          var audio = new Audio(url);
+          audio.loop = true;
+          audio.play();
+          flag = true;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="hello_image">
+        <img
+          src="cakebo.jpg"
+          class="rotate"
+          alt="cheack ur network"
+          width="50%"
+          height="auto"
+        />
+      </div>
+      <div class="centered">
+        <h1 onclick="playAudio('hbtu.mp3')">С Днём рождения!</h1>
+      </div>
+    </div>
+    <p id="demo"></p>
+    <script>
+      document
+        .getElementById("hello_image")
+        .addEventListener("click", function () {
+          document.getElementById("demo").innerHTML = "Всего наилучшего! <3";
+        });
+    </script>
+  </body>
+</html>
